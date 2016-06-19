@@ -1,0 +1,7 @@
+<%= link "New movie", to: movie_path(@conn, :new), class: "new-movie pull-right" %>
+<h2>Listing movies</h2>
+<ul class="movies">
+  <%= for movie <- @movies do %>
+    <li class="movie"><%= link movie.title, to: movie_path(@conn, :show, movie.id) %></li>
+  <% end %>
+</ul>
